@@ -1,9 +1,9 @@
-/* Import Font */
+/* font import */
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
-/* General Styling */
+/* general Styling */
 html {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 :root {
@@ -25,10 +25,10 @@ body {
   background-color: var(--main-black);
   color: var(--main-white);
   font-family: "Rubik", sans-serif;
-  margin: 3rem 5rem;
+  margin: 2rem 5rem;
 }
 
-/* Header elements */
+/* header elements */
 nav {
   display: flex;
   justify-content: space-between;
@@ -88,5 +88,65 @@ nav .account-links .register-link:hover {
   background-color: var(--highlight-white);
 }
 
+/* main elements */
 main {
+}
+
+.hero {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.hero-text {
+  font-size: 4.209rem;
+  line-height: 1;
+  margin-top: 1.5rem;
+}
+
+.hero p {
+  margin-top: 1rem;
+}
+
+.hero button {
+  margin-top: 1.6rem;
+  background-color: var(--main-white);
+  color: var(--main-black);
+  border-radius: 2rem;
+  padding: 1.5rem 1.4rem;
+  font-size: 1rem;
+}
+
+.hero button:hover {
+  background-color: var(--highlight-white);
+  cursor: pointer;
+}
+
+.featured-brands {
+  display: flex;
+  margin-top: 4rem;
+  align-items: center;
+  gap: 2rem;
+}
+
+.yahoo {
+  height: 1.6rem;
+}
+
+.bloomberg {
+  height: 3rem;
+}
+
+.fortune {
+  height: 1.3rem;
+}
+
+.filter-white {
+  filter: invert(99%) sepia(100%) saturate(1%) hue-rotate(43deg)
+    brightness(102%) contrast(101%);
+}
+
+spline-viewer {
+  height: 500px;
+  padding-top: 0;
 }
