@@ -26,6 +26,7 @@ body {
   color: var(--main-white);
   font-family: "Rubik", sans-serif;
   margin: 2rem 5rem;
+  max-width: 1600px;
 }
 
 /* header elements */
@@ -104,8 +105,14 @@ main {
   margin-top: 1.5rem;
 }
 
+.hero-text span {
+  color: var(--main-blue);
+}
+
 .hero p {
   margin-top: 1rem;
+  width: 90%;
+  line-height: 1.5;
 }
 
 .hero button {
@@ -124,7 +131,7 @@ main {
 
 .featured-brands {
   display: flex;
-  margin-top: 4rem;
+  margin-top: 5rem;
   align-items: center;
   gap: 2rem;
 }
@@ -149,4 +156,49 @@ main {
 spline-viewer {
   height: 500px;
   padding-top: 0;
+}
+
+.foreign-exchange-rates-preview {
+  margin-top: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.foreign-exchange-rates-preview h2 {
+  text-align: center;
+  font-size: 2.369rem;
+}
+
+.foreign-exchange-rates-preview .table-card {
+  width: 100%;
+  border: 1px var(--main-white) solid;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  box-shadow: var(--highlight-white) 0 0 10px 0;
+}
+
+.foreign-exchange-rates-preview table {
+  text-align: center;
+  font-size: 1rem;
+  width: 100%;
+  padding: 3rem;
+}
+
+.foreign-exchange-rates-preview th {
+  padding: 1rem;
+  background-color: var(--main-blue);
+}
+
+.foreign-exchange-rates-preview th:first-child {
+  border-radius: 1rem 0 0 0;
+}
+
+.foreign-exchange-rates-preview th:last-child {
+  border-radius: 0 1rem 0 0;
+}
+
+.foreign-exchange-rates-preview td {
+  border-bottom: 1px solid var(--main-white);
+  padding: 2rem;
 }
