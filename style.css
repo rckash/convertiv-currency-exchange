@@ -90,9 +90,8 @@ nav .account-links .register-link:hover {
 }
 
 /* main elements */
-main {
-}
 
+/* hero section */
 .hero {
   margin-top: 2rem;
   display: grid;
@@ -158,6 +157,7 @@ spline-viewer {
   padding-top: 0;
 }
 
+/* foreign-exchange rates preview section */
 .foreign-exchange-rates-preview {
   margin-top: 9rem;
   display: flex;
@@ -170,14 +170,6 @@ spline-viewer {
   font-size: 2.369rem;
 }
 
-.foreign-exchange-rates-preview .table-card {
-  width: 100%;
-  border: 1px var(--main-white) solid;
-  border-radius: 1rem;
-  margin-top: 2rem;
-  box-shadow: var(--highlight-white) 0 0 10px 0;
-}
-
 .foreign-exchange-rates-preview table {
   text-align: center;
   font-size: 1rem;
@@ -188,6 +180,7 @@ spline-viewer {
 .foreign-exchange-rates-preview th {
   padding: 1rem;
   background-color: var(--main-blue);
+  border: none;
 }
 
 .foreign-exchange-rates-preview th:first-child {
@@ -201,4 +194,49 @@ spline-viewer {
 .foreign-exchange-rates-preview td {
   border-bottom: 1px solid var(--main-white);
   padding: 2rem;
+}
+
+/* why choose us section */
+.visual-section {
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "connect image receive"
+    "select image take"
+    "confirm image drive";
+}
+
+.choose-us-card {
+  background-color: var(--highlight-blue);
+  border-radius: 1rem;
+  margin: 1rem;
+}
+
+.connect-your-wallet {
+  grid-area: connect;
+}
+
+.select-your-quantity {
+  grid-area: select;
+}
+
+.confirm-transaction {
+  grid-area: confirm;
+}
+
+.receive-your-own-nfts {
+  grid-area: receive;
+}
+
+.take-a-market-to-sell {
+  grid-area: take;
+}
+
+.drive-your-collection {
+  grid-area: drive;
+}
+
+.spline-visual {
+  grid-area: image;
 }
