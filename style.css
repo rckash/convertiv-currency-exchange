@@ -3,7 +3,7 @@
 
 /* general Styling */
 html {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 :root {
@@ -138,6 +138,11 @@ nav .account-links .register-link:hover {
     brightness(102%) contrast(101%);
 }
 
+.filter-black {
+  filter: invert(4%) sepia(83%) saturate(729%) hue-rotate(171deg)
+    brightness(99%) contrast(100%);
+}
+
 spline-viewer {
   height: 500px;
   padding-top: 0;
@@ -255,8 +260,8 @@ spline-viewer {
 }
 
 .icon-card {
-  padding: 1.5rem;
-  margin: 2rem 0 0 2rem;
+  padding: 1.2rem;
+  margin: 1.2rem 0 0 1.2rem;
   background-color: var(--main-blue);
   grid-area: choose-us-icon;
   border-radius: 1rem;
@@ -264,16 +269,16 @@ spline-viewer {
 
 .card-title {
   grid-area: choose-us-title;
-  padding: 2rem 2rem 1rem;
+  margin: 0 1.2rem 0 1.2rem;
   font-size: 1.8rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .card-description {
   grid-area: choose-us-description;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  margin-bottom: 2rem;
+  margin-left: 1.2rem;
+  margin-right: 1.2rem;
+  margin-bottom: 1.2rem;
 }
 
 /* join our community section */
@@ -291,10 +296,19 @@ spline-viewer {
 }
 
 .join-our-community button {
-  margin-top: 5rem;
-  background-color: var(--main-white);
-  color: var(--main-black);
+  background-color: var(--main-blue);
+  color: var(--main-white);
   border-radius: 2rem;
-  padding: 1.5rem 1.4rem;
-  font-size: 1rem;
+  padding: 1.5rem 1.8rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
+
+.join-our-community button img {
+  height: 1.8rem;
+  margin-right: 1rem;
 }
