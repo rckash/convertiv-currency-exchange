@@ -82,7 +82,7 @@ nav .account-links {
 nav .register-link {
   background-color: var(--main-white);
   color: var(--main-black);
-  border-radius: 1.5rem;
+  border-radius: 1rem;
 }
 
 nav .account-links .register-link:hover {
@@ -118,9 +118,10 @@ nav .account-links .register-link:hover {
   margin-top: 1.6rem;
   background-color: var(--main-white);
   color: var(--main-black);
-  border-radius: 2rem;
+  border-radius: 1rem;
   padding: 1.5rem 1.4rem;
   font-size: 1rem;
+  font-weight: 600;
 }
 
 .hero button:hover {
@@ -167,7 +168,12 @@ spline-viewer {
 
 .foreign-exchange-rates-preview h2 {
   text-align: center;
-  font-size: 2.369rem;
+  font-size: 3.2rem;
+}
+
+.foreign-exchange-rates-preview p {
+  text-align: center;
+  margin-top: 0.5rem;
 }
 
 .foreign-exchange-rates-preview table {
@@ -197,6 +203,15 @@ spline-viewer {
 }
 
 /* why choose us section */
+.why-choose-us {
+  margin-top: 9rem;
+}
+
+.why-choose-us h2 {
+  text-align: center;
+  font-size: 3.2rem;
+}
+
 .visual-section {
   display: grid;
   grid-template-columns: 3fr 3fr 3fr;
@@ -205,12 +220,7 @@ spline-viewer {
     "connect image receive"
     "select image take"
     "confirm image drive";
-}
-
-.choose-us-card {
-  background-color: var(--highlight-blue);
-  border-radius: 1rem;
-  margin: 1rem;
+  margin-top: 2rem;
 }
 
 .connect-your-wallet {
@@ -239,4 +249,67 @@ spline-viewer {
 
 .spline-visual {
   grid-area: image;
+}
+
+.visual-section img {
+  height: 2rem;
+}
+
+.choose-us-card {
+  background-color: var(--highlight-blue);
+  border-radius: 1rem;
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "choose-us-icon choose-us-title"
+    ". choose-us-description";
+  justify-content: left;
+  align-items: center;
+}
+
+.icon-card {
+  padding: 1.5rem;
+  margin: 2rem 0 0 2rem;
+  background-color: var(--main-blue);
+  grid-area: choose-us-icon;
+  border-radius: 1rem;
+}
+
+.card-title {
+  grid-area: choose-us-title;
+  padding: 2rem 2rem 1rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.card-description {
+  grid-area: choose-us-description;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* join our community section */
+.join-our-community {
+  margin-top: 9rem;
+  text-align: center;
+}
+
+.join-our-community h2 {
+  font-size: 3.2rem;
+}
+
+.join-our-community p {
+  margin-top: 0.5rem;
+}
+
+.join-our-community button {
+  margin-top: 5rem;
+  background-color: var(--main-white);
+  color: var(--main-black);
+  border-radius: 2rem;
+  padding: 1.5rem 1.4rem;
+  font-size: 1rem;
 }
