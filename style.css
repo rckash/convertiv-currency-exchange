@@ -363,3 +363,13 @@ footer img {
 .privacy-terms a:hover {
   color: var(--main-blue);
 }
+
+.privacy-terms a {
+  text-decoration: none;
+  margin-top: 1.5rem;
+  color: var(--main-white);
+}
+
+.privacy-terms a:hover {
+  color: var(--main-blue);
+}
