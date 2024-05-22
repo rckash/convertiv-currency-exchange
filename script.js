@@ -1,5 +1,3 @@
-alert("Hello World!");
-
 const API_KEY = "vIVCKDc3sl3JkTM7F9KiqZhbZ3RBgUbl";
 const API_URL = "https://api.currencybeacon.com/v1/latest";
 var baseCurrency = "USD";

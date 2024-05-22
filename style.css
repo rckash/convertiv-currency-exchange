@@ -79,6 +79,10 @@ nav .account-links {
   height: 48px;
 }
 
+nav .social-links img {
+  height: 1rem;
+}
+
 nav .register-link {
   background-color: var(--main-white);
   color: var(--main-black);
@@ -295,6 +299,10 @@ spline-viewer {
   margin-top: 0.5rem;
 }
 
+.join-our-community a {
+  text-decoration: none;
+}
+
 .join-our-community button {
   background-color: var(--main-blue);
   color: var(--main-white);
@@ -306,6 +314,11 @@ spline-viewer {
   justify-content: center;
   margin: 0 auto;
   margin-top: 5rem;
+  border: none;
+}
+
+.join-our-community button:hover {
+  cursor: pointer;
 }
 
 .join-our-community button img {

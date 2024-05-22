@@ -8,10 +8,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </head>
   <body>
+    <a id="logo-nav-link-destination"></a>
     <header>
       <nav>
         <div class="logo no-select">
-          <a href="#">
+          <a href="index.html">
             <img
               width="48"
               height="48"
@@ -19,11 +20,17 @@
               alt="convertiv logo"
             />
           </a>
-          <a href="#">convertiv</a>
+          <a href="index.html">convertiv</a>
         </div>
         <div class="account-links">
-          <a href="#">Login</a>
-          <a href="#" class="register-link">Register</a>
+          <a href="#preview-nav-link-destination">Preview</a>
+          <a href="#choose-us-nav-link-destination">Choose Us</a>
+          <a href="#join-nav-link-destination">Join</a>
+        </div>
+        <div class="social-links">
+          <a href="https://discord.com" target="_blank"
+            ><img src="./images/discord-mark-white.svg" alt="Discord icon"
+          /></a>
         </div>
       </nav>
     </header>
@@ -65,7 +72,9 @@
             height="100%"
           ></iframe>
         </div>
+        <a id="preview-nav-link-destination"></a>
       </section>
+
       <section class="foreign-exchange-rates-preview">
         <h2>Market-leading FX pricing</h2>
         <p>Standard spread pricing, no commissions</p>
@@ -89,7 +98,9 @@
             <td>Trend</td>
           </tr>
         </table>
+        <a id="choose-us-nav-link-destination"></a>
       </section>
+
       <section class="why-choose-us">
         <h2>Why choose us?</h2>
         <div class="visual-section">
@@ -186,15 +197,18 @@
             </p>
           </div>
         </div>
+        <a id="join-nav-link-destination"></a>
       </section>
 
       <section class="join-our-community">
         <h2>Join our community</h2>
         <p>Interact with our FX experts</p>
-        <button>
-          <img src="./images/discord-mark-white.svg" alt="Discord icon" />Join
-          now
-        </button>
+        <a href="https://discord.com" target="_blank"
+          ><button>
+            <img src="./images/discord-mark-white.svg" alt="Discord icon" />Join
+            now
+          </button></a
+        >
       </section>
     </main>
 
@@ -228,8 +242,11 @@
           /></a>
         </div>
         <div class="privacy-terms">
-          <a href="">Privacy Policy</a>
-          <a href="">Terms of Use</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+        <div class="privacy-terms">
+          <a href="#logo-nav-link-destination">Back to top</a>
         </div>
       </div>
 
