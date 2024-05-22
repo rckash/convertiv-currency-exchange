@@ -334,10 +334,6 @@ footer img {
   align-items: center;
 }
 
-.social-links:hover {
-  color: var(--main-blue);
-}
-
 .privacy-terms {
   display: flex;
   gap: 2rem;
