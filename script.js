@@ -1,42 +1,60 @@
-// API
-const API_KEY = "vIVCKDc3sl3JkTM7F9KiqZhbZ3RBgUbl";
-const API_URL = "https://api.currencybeacon.com/v1/latest";
-var baseCurrency = "USD";
-var symbols =
-  "PHP,EUR,JPY,GBP,AUD,CAD,CHF,CNH,HKD,NZD,SGD,SEK,KRW,NOK,NZD,INR,MXN,TWD,ZAR";
+document.addEventListener("DOMContentLoaded", function() {
+  // API
+  const API_KEY = "vIVCKDc3sl3JkTM7F9KiqZhbZ3RBgUbl";
+  const API_URL = "https://api.currencybeacon.com/v1/latest";
+  var baseCurrency = "USD";
+  var symbols =
+    "PHP,EUR,JPY,GBP,AUD,CAD,CHF,CNH,HKD,NZD,SGD,SEK,KRW,NOK,NZD,INR,MXN,TWD,ZAR";
 
-async function checkRates() {
-  const response = await fetch(
-    API_URL +
-      `?api_key=${API_KEY}` +
-      `&base=${baseCurrency}` +
-      `&symbols=${symbols}`
-  );
-  var data = await response.json();
+  async function checkRates() {
+    try {
+      const response = await fetch(
+        API_URL +
+          `?api_key=${API_KEY}` +
+          `&base=${baseCurrency}` +
+          `&symbols=${symbols}`
+      );
 
-  console.log(data);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
-  var myArray = data.rates;
+      const data = await response.json();
+      console.log(data);
 
-  console.log(myArray);
+      const myArray = data.rates;
+      console.log(myArray);
 
-  for (i = 0; i < myArray.length; i++) {
-    const obj = Object.values(myArray[i]);
-    const rowElement = document.createElement("tr");
-    for (const cellText of obj) {
-      const cellElement = document.createElement("td");
-      cellElement.textContent = cellText;
-      rowElement.appendChild(cellElement);
+      const tableBody = document.getElementById("currency-table");
+      tableBody.innerHTML = '';
+
+      for (const [currency, rate] of Object.entries(myArray)) {
+        const rowElement = document.createElement("tr");
+        const currencyCell = document.createElement("td");
+        currencyCell.textContent = currency;
+        rowElement.appendChild(currencyCell);
+
+        const sellCell = document.createElement("td");
+        sellCell.textContent = rate.toFixed(4); 
+        rowElement.appendChild(sellCell);
+
+        const buyRate = (rate * 1.05).toFixed(4); 
+        const buyCell = document.createElement("td");
+        buyCell.textContent = buyRate;
+        rowElement.appendChild(buyCell);
+
+
+        const trendCell = document.createElement("td");
+        trendCell.textContent = "Trend"; 
+        rowElement.appendChild(trendCell);
+
+    
+        tableBody.appendChild(rowElement);
+      }
+    } catch (error) {
+      console.error('Error fetching exchange rates:', error);
     }
-
-    // var table = document.getElementById("currency-table");
-    // const tableRow = document.createElement("tr");
-    // const tdName = document.createElement("td");
-    // const tdNameText = document.createTextNode(Object.keys(myArray));
-    // tdName.appendChild(tdNameText);
-    // tableRow.appendChild(tdName);
-    // table.appendChild(tableRow);
   }
-}
 
-checkRates();
+  checkRates();
+});
