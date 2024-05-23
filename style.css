@@ -196,6 +196,37 @@ spline-viewer {
   padding: 2rem;
 }
 
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-container ul {
+  margin: 1rem;
+}
+
+.pagination-container li {
+  display: inline-block;
+  cursor: pointer;
+  color: var(--main-black);
+  background-color: var(--highlight-white);
+  padding: 1rem;
+}
+
+.pagination-container .active {
+  background-color: var(--main-blue);
+  padding: 2rem;
+}
+
+.btn1,
+.btn2 {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 1rem;
+}
+
 /* why choose us section */
 .why-choose-us {
   margin-top: 9rem;
