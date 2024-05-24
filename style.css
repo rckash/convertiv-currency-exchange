@@ -25,14 +25,28 @@ body {
   background-color: var(--main-black);
   color: var(--main-white);
   font-family: "Rubik", sans-serif;
-  margin: 2rem 5rem;
   max-width: 1600px;
 }
 
 /* header elements */
+header {
+  position: sticky;
+  top: 0;
+  transition: background-color 0.4s ease-in-out;
+  border-radius: 0 0 1rem 1rem;
+  z-index: 9999;
+}
+
+header.scrolled {
+  background-color: var(--highlight-blue);
+  transition: background-color 0.4s ease-in-out;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
+  padding: 1rem 1rem;
+  /* background-color: red; */
 }
 
 nav a {
@@ -87,6 +101,10 @@ nav .social-links img {
 /* main elements */
 
 /* hero section */
+main {
+  margin: 0rem 2rem;
+}
+
 .hero {
   margin-top: 2rem;
   display: grid;
