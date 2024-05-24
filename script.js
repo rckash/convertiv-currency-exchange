@@ -107,7 +107,7 @@ let currentValue = 1;
 
 function activeLink() {
   // console.log(`current:${currentValue} last:${lastValue}`);
-
+  document.getElementById("preview-nav-link-destination").scrollIntoView();
   currentValue = event.target.value;
   if (currentValue != lastValue) {
     for (l of link) {
