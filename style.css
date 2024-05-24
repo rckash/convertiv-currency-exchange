@@ -72,7 +72,7 @@ nav .logo a:hover {
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
-nav .account-links {
+nav .nav-links {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -81,16 +81,7 @@ nav .account-links {
 
 nav .social-links img {
   height: 1rem;
-}
-
-nav .register-link {
-  background-color: var(--main-white);
-  color: var(--main-black);
-  border-radius: 1rem;
-}
-
-nav .account-links .register-link:hover {
-  background-color: var(--highlight-white);
+  padding: 0.2rem 1rem;
 }
 
 /* main elements */
@@ -224,15 +215,18 @@ spline-viewer {
 .pagination-container li {
   display: inline-block;
   cursor: pointer;
-  color: var(--main-black);
-  background-color: var(--main-white);
+  color: var(--main-white);
   padding: 1rem;
   border-radius: 0.6rem;
   border: none;
 }
 
+.pagination-container li:hover {
+  background-color: var(--highlight-blue);
+}
+
 .pagination-container .active {
-  background-color: var(--main-blue);
+  background-color: var(--highlight-blue);
   padding: 1.5rem;
 }
 
@@ -242,9 +236,15 @@ spline-viewer {
   align-items: center;
   cursor: pointer;
   padding: 0.8rem;
-  background-color: var(--main-white);
+  background-color: var(--main-black);
+  color: white;
   border-radius: 0.6rem;
   border: none;
+}
+
+.btn1:hover,
+.btn2:hover {
+  background-color: var(--highlight-blue);
 }
 
 /* why choose us section */
