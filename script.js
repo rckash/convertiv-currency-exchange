@@ -1,71 +1,125 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // API
-  const API_KEY = "vIVCKDc3sl3JkTM7F9KiqZhbZ3RBgUbl";
-  const API_URL = "https://api.currencybeacon.com/v1/latest";
-  var baseCurrency = "USD";
-  var symbols =
-    "PHP,EUR,JPY,GBP,AUD,CAD,CHF,CNH,HKD,NZD,SGD,SEK,KRW,NOK,NZD,INR,MXN,TWD,ZAR";
+// API
+const API_KEY = "vIVCKDc3sl3JkTM7F9KiqZhbZ3RBgUbl";
+const API_URL = "https://api.currencybeacon.com/v1/latest";
+var baseCurrency = "USD";
+var sampleSymbols = [
+  "PHP",
+  "EUR",
+  "JPY",
+  "GBP",
+  "AUD",
+  "CAD",
+  "CHF", //
+  "CNH",
+  "HKD",
+  "NZD",
+  "SGD",
+  "SEK",
+  "KRW",
+  "NOK", //
+  "NZD",
+  "INR",
+  "MXN",
+  "TWD",
+  "ZAR", //
+];
 
-  async function checkRates() {
-    try {
-      const response = await fetch(
-        API_URL +
-          `?api_key=${API_KEY}` +
-          `&base=${baseCurrency}` +
-          `&symbols=${symbols}`
-      );
+var defaultSymbols = ["PHP", "EUR", "JPY", "GBP", "AUD", "CAD", "CHF"];
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
+async function checkRates(currencySymbols = defaultSymbols) {
+  try {
+    const response = await fetch(
+      API_URL +
+        `?api_key=${API_KEY}` +
+        `&base=${baseCurrency}` +
+        `&symbols=${currencySymbols}`
+    );
 
-      const data = await response.json();
-      console.log(data);
-
-      const myArray = data.rates;
-      console.log(myArray);
-
-      const tableBody = document.getElementById("currency-table");
-      tableBody.innerHTML = "";
-
-      for (const [currency, rate] of Object.entries(myArray)) {
-        const rowElement = document.createElement("tr");
-        const currencyCell = document.createElement("td");
-        currencyCell.textContent = currency;
-        rowElement.appendChild(currencyCell);
-
-        const sellCell = document.createElement("td");
-        sellCell.textContent = rate.toFixed(4);
-        rowElement.appendChild(sellCell);
-
-        const buyRate = (rate * 1.05).toFixed(4);
-        const buyCell = document.createElement("td");
-        buyCell.textContent = buyRate;
-        rowElement.appendChild(buyCell);
-
-        const trendCell = document.createElement("td");
-        trendCell.textContent = "Trend";
-        rowElement.appendChild(trendCell);
-
-        tableBody.appendChild(rowElement);
-      }
-    } catch (error) {
-      console.error("Error fetching exchange rates:", error);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
+
+    const data = await response.json();
+    console.log(data);
+
+    const myArray = data.rates;
+    console.log(myArray);
+
+    const tableBody = document.getElementById("currency-table");
+    tableBody.innerHTML = "";
+
+    for (const [currency, rate] of Object.entries(myArray)) {
+      const rowElement = document.createElement("tr");
+      const currencyCell = document.createElement("td");
+      currencyCell.textContent = currency;
+      rowElement.appendChild(currencyCell);
+
+      const sellCell = document.createElement("td");
+      sellCell.textContent = rate.toFixed(4);
+      rowElement.appendChild(sellCell);
+
+      const buyRate = (rate * 1.05).toFixed(4);
+      const buyCell = document.createElement("td");
+      buyCell.textContent = buyRate;
+      rowElement.appendChild(buyCell);
+
+      const trendCell = document.createElement("td");
+      const image = document.createElement("img");
+      image.src = "./images/triangle-up.svg";
+      let result = Math.floor(Math.random() * 2);
+      console.log(result);
+      if (result === 1) {
+        image.classList.add("filter-red");
+      } else {
+        image.classList.add("filter-green");
+      }
+
+      trendCell.appendChild(image);
+      rowElement.appendChild(trendCell);
+
+      tableBody.appendChild(rowElement);
+    }
+  } catch (error) {
+    console.error("Error fetching exchange rates:", error);
+  }
+}
+
+checkRates();
+
+function symbolsSelector(currentValue) {
+  let startingIndex = (currentValue - 1) * 7; //0,1,2,3,4,5,6
+  let currencySymbols = [];
+
+  for (i = 0; i < 7; i++) {
+    currencySymbols.push(sampleSymbols[startingIndex]);
+    startingIndex++;
+
+    // console.log(currencySymbols);
+    if (startingIndex === 19) break;
   }
 
-  checkRates();
-});
+  return currencySymbols.join();
+}
 
 let link = document.getElementsByClassName("link");
+let lastValue = 1;
 let currentValue = 1;
 
 function activeLink() {
-  for (l of link) {
-    l.classList.remove("active");
-  }
-  event.target.classList.add("active");
+  // console.log(`current:${currentValue} last:${lastValue}`);
+
   currentValue = event.target.value;
+  if (currentValue != lastValue) {
+    for (l of link) {
+      l.classList.remove("active");
+    }
+    event.target.classList.add("active");
+    currentValue = event.target.value;
+    lastValue = currentValue;
+
+    let currencySymbols = symbolsSelector(currentValue);
+    checkRates(currencySymbols);
+  }
 }
 
 function backBtn() {

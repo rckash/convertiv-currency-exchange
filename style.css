@@ -147,6 +147,17 @@ nav .account-links .register-link:hover {
     brightness(99%) contrast(100%);
 }
 
+.filter-green {
+  filter: invert(81%) sepia(34%) saturate(5528%) hue-rotate(71deg)
+    brightness(102%) contrast(102%);
+}
+
+.filter-red {
+  filter: invert(22%) sepia(94%) saturate(5839%) hue-rotate(354deg)
+    brightness(102%) contrast(89%);
+  transform: rotate(180deg);
+}
+
 spline-viewer {
   height: 500px;
   padding-top: 0;
@@ -194,6 +205,10 @@ spline-viewer {
 .foreign-exchange-rates-preview td {
   border-bottom: 1px solid var(--main-white);
   padding: 2rem;
+}
+
+.foreign-exchange-rates-preview img {
+  height: 1rem;
 }
 
 .pagination-container {
