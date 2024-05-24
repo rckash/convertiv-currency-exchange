@@ -87,7 +87,7 @@ async function checkRates(currencySymbols = defaultSymbols) {
 checkRates();
 
 function symbolsSelector(currentValue) {
-  let startingIndex = (currentValue - 1) * 7; //0,1,2,3,4,5,6
+  let startingIndex = (currentValue - 1) * 7;
   let currencySymbols = [];
 
   for (i = 0; i < 7; i++) {
@@ -123,21 +123,34 @@ function activeLink() {
 }
 
 function backBtn() {
+  document.getElementById("preview-nav-link-destination").scrollIntoView();
+
   if (currentValue > 1) {
     for (l of link) {
       l.classList.remove("active");
     }
     currentValue--;
     link[currentValue - 1].classList.add("active");
+    lastValue = currentValue;
+
+    let currencySymbols = symbolsSelector(currentValue);
+    checkRates(currencySymbols);
   }
 }
 
 function nextBtn() {
+  document.getElementById("preview-nav-link-destination").scrollIntoView();
+
   if (currentValue < 3) {
     for (l of link) {
       l.classList.remove("active");
     }
     currentValue++;
     link[currentValue - 1].classList.add("active");
+
+    lastValue = currentValue;
+
+    let currencySymbols = symbolsSelector(currentValue);
+    checkRates(currencySymbols);
   }
 }
