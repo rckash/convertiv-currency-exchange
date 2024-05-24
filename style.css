@@ -225,13 +225,15 @@ spline-viewer {
   display: inline-block;
   cursor: pointer;
   color: var(--main-black);
-  background-color: var(--highlight-white);
+  background-color: var(--main-white);
   padding: 1rem;
+  border-radius: 0.6rem;
+  border: none;
 }
 
 .pagination-container .active {
   background-color: var(--main-blue);
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .btn1,
@@ -239,7 +241,10 @@ spline-viewer {
   display: inline-flex;
   align-items: center;
   cursor: pointer;
-  padding: 1rem;
+  padding: 0.8rem;
+  background-color: var(--main-white);
+  border-radius: 0.6rem;
+  border: none;
 }
 
 /* why choose us section */
@@ -388,9 +393,18 @@ footer img {
 
 .social-links {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   justify-content: center;
   align-items: center;
+}
+
+.social-links a {
+  padding: 0.6rem;
+  border-radius: 1rem;
+}
+
+.social-links a:hover {
+  background-color: var(--highlight-blue);
 }
 
 .privacy-terms {
